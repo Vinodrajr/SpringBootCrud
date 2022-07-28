@@ -23,27 +23,27 @@ public class EmployeeController {
 	@Autowired
 	EmployeeService service;
 
-	@PostMapping("/save")
+	@PostMapping("/employee")
 	public ResponseEntity<ResponseStructure<Employee>> saveEmployee(@RequestBody Employee employee) {
 		return service.saveEmployee(employee);
 	}
 
-	@DeleteMapping("/delete")
+	@DeleteMapping("/employee")
 	public ResponseEntity<ResponseStructure<Employee>> deleteEmployee(@RequestParam int id) {
 		return service.deleteEmployee(id);
 	}
 
-	@GetMapping("/getbyid/{id}")
+	@GetMapping("/employee/{id}")
 	public ResponseEntity<ResponseStructure<Employee>> getEmployeeById(@PathVariable int id) {
 		return service.getEmployeeById(id);
 	}
 
-	@GetMapping("/findall")
+	@GetMapping("/employee")
 	public ResponseEntity<ResponseStructure<List<Employee>>> findAllEmployees() {
 		return service.findAllEmployees();
 	}
 
-	@PutMapping("/update")
+	@PutMapping("/employee")
 	public ResponseEntity<ResponseStructure<Employee>> updateEmployee(@RequestBody Employee employee,
 			@RequestParam int id) {
 		return service.udpateEmployee(employee, id);
